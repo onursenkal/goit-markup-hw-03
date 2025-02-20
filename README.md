@@ -1,2 +1,1 @@
-# goit-markup-hw-03
-Figmadan nefret :D  
+# goit-markup-hw-02

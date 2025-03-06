@@ -56,22 +56,25 @@ ol, ul  {
 /*header*/
 .header{
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-container{
-  display: flex;
   padding: 0 15px;
-}
-/*
-.header-section > .container{
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}*/
+  align-items: center;
+  flex-direction: row;
+}
 .menu-nav{
   display: flex;
   align-items: center;
+  
+}
+.contact_information{
+  display: flex;
 }
 .header-logo{
+  /*öncesi*/
   font-family: "Raleway",sans-serif;
   font-size:18px;
   font-weight: 700;
@@ -81,7 +84,6 @@ ol, ul  {
   text-decoration: none;
   color: #4d5ae5;
   margin-right: 76px;
-  
 }
 .header_logo_second{
   color: #2e2f42;
@@ -95,12 +97,24 @@ ol, ul  {
 }
 .menu-list{
   display: block;
+  position: relative;
   text-decoration: none;
-  color: #2e2f42;
+  color: #404bbf;
   font-size:16px;
   font-weight: 500;
   letter-spacing: 0.02em;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-list::after{
+  content: "";
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 .menu-list:hover, .menu-list:focus{
   color:#404bbf;
@@ -117,6 +131,7 @@ ol, ul  {
   font-size: 16px;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact_list:hover, .contact_list:focus{
   color: #404bbf;
@@ -132,6 +147,12 @@ menu:active{
   background-color: #2E2F42;
   text-align: center;
   padding: 188px 0;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/slider.jpg);   
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  background-size: cover;
+  margin: 0 auto;
   
 }
 .slider_title{
@@ -158,6 +179,7 @@ menu:active{
   min-width: 169px;
   height: 56px;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 
 }
 .blue_button:hover{
@@ -188,6 +210,20 @@ menu:active{
   margin-right: 24px;
   margin-top: 72px;
   gap:24px;
+}
+.about-us-img{
+  height: 112px;
+  background-color: #F4F4FD;
+  border: 1px solid #8E8F99;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-us-img svg{
+  width: 64px;
+  height: 64px;
 }
 .about-us-title{
   line-height: 1.11;
@@ -236,8 +272,41 @@ menu:active{
   text-align: center;
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
-}
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 
+}
+.our-team-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:24px;
+  margin-top: 8px;
+}
+.our-team-social svg{
+  width: 16px;
+  height: 16px;
+}
+.team-social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #4D5AE5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+  
+  
+}
+.team-social-link:hover{
+  background-color: #404bbf
+}
+.team-social-link:focus{
+  background-color: #404bbf
+}
+.social-svg{
+  fill:#f4f4fd;
+}
 .our_team_list:last-child{
   margin-right: 0;
 }
@@ -282,6 +351,11 @@ menu:active{
   flex: 1;
   background-color: #ffffff;
   flex-basis: calc((100% - 72px) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-list-item:hover{
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .portfolio-box{
   padding: 32px 16px;
@@ -308,6 +382,27 @@ menu:active{
 .portfolio-content{
   letter-spacing: 0.02em;
 }
+.portfoli-img-box{
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-information{
+  color: #F4F4FD;
+  font-size:16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px;
+  background-color: #4D5AE5;
+  position:absolute;
+  top: 0;
+  width:100%;
+  height:100%;
+  transform:translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-list-item:hover .portfolio-information{
+  transform: translateY(0);
+}
 /*FOOTER*/
 .footer{
   background-color: #2E2F42;
@@ -315,13 +410,26 @@ menu:active{
   letter-spacing: 17.33;
   padding: 100px 0;
 }
+.footer > .container{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
 .footer-information{
   width: 264px;
+}
+.footer-social-title{
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size:16px;
+  letter-spacing: 0.02em;
+  line-height: 24px;
+  margin-bottom: 16px;
 }
 .footer-text{
   color:#F4F4FD;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   max-width: 264px;
 }
@@ -335,8 +443,45 @@ menu:active{
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 16px;
-  
 }
 .footer_logo_second{
   color: #F4F4FD;
+}
+.footer-social-list-item{
+  width: 40px;
+  height: 40px;
+}
+.footer-social{
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.footer-social-list{
+  display: flex;
+  gap: 16px;
+}
+.footer-social-link{
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.footer-social-link{
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+.footer-social-svg{
+  fill: #f4f4fd;
+}
+.footer-social-link:hover{
+  background-color: #31d0aa;
+}
+.footer-social-link:focus{
+  background-color: #31d0aa;
+}
+.footer-logo-inform{
+  margin-right: 120px;
 }
